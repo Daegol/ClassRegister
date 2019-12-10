@@ -1,0 +1,9 @@
+D:\Studia\Aplikacje Internetowe\ClassRegister\src\ClassRegister.Core\bin\Debug\netcoreapp2.1\ClassRegister.Core.deps.json
+D:\Studia\Aplikacje Internetowe\ClassRegister\src\ClassRegister.Core\bin\Debug\netcoreapp2.1\ClassRegister.Core.dll
+D:\Studia\Aplikacje Internetowe\ClassRegister\src\ClassRegister.Core\bin\Debug\netcoreapp2.1\ClassRegister.Core.pdb
+D:\Studia\Aplikacje Internetowe\ClassRegister\src\ClassRegister.Core\obj\Debug\netcoreapp2.1\ClassRegister.Core.csprojAssemblyReference.cache
+D:\Studia\Aplikacje Internetowe\ClassRegister\src\ClassRegister.Core\obj\Debug\netcoreapp2.1\ClassRegister.Core.csproj.CoreCompileInputs.cache
+D:\Studia\Aplikacje Internetowe\ClassRegister\src\ClassRegister.Core\obj\Debug\netcoreapp2.1\ClassRegister.Core.AssemblyInfoInputs.cache
+D:\Studia\Aplikacje Internetowe\ClassRegister\src\ClassRegister.Core\obj\Debug\netcoreapp2.1\ClassRegister.Core.AssemblyInfo.cs
+D:\Studia\Aplikacje Internetowe\ClassRegister\src\ClassRegister.Core\obj\Debug\netcoreapp2.1\ClassRegister.Core.dll
+D:\Studia\Aplikacje Internetowe\ClassRegister\src\ClassRegister.Core\obj\Debug\netcoreapp2.1\ClassRegister.Core.pdb
