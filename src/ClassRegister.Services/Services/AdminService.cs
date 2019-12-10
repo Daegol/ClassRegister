@@ -12,7 +12,6 @@ namespace ClassRegister.Services.Services
     {
         private readonly IAdminRepository _adminRepository;
         private readonly IMapper _mapper;
-        private readonly MyMapper _mymapper = new MyMapper();
 
         public AdminService(IAdminRepository adminRepository, IMapper mapper)
         {
@@ -42,7 +41,7 @@ namespace ClassRegister.Services.Services
         public async Task UpdateAdmin(UpdateAdminDto adminDto)
         {
             var admin = await _adminRepository.GetByPesel(adminDto.Pesel);
-            admin = _mymapper.UpdateAdminMap(adminDto, admin);
+            admin = MyMapper.UpdateAdminMap(adminDto, admin);
             await _adminRepository.UpdateAdmin(admin);
         }
     }

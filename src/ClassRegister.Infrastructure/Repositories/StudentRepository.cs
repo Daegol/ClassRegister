@@ -36,6 +36,19 @@ namespace ClassRegister.Infrastructure.Repositories
             await Task.CompletedTask;
         }
 
+        public async Task AddClasses(IEnumerable<Guid> studentsId, Guid classId)
+        {
+            foreach (var studentId in studentsId)
+            {
+                var student = await GetById(studentId);
+                student.ClassId = classId;
+                _context.Students.Update(student);
+            }
+
+            await _context.SaveChangesAsync();
+            await Task.CompletedTask;
+        }
+
         public async Task DeleteStudent(string pesel)
         {
             var student = await GetByPesel(pesel);

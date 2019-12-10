@@ -3636,11 +3636,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Studia\\Aplikacje Internetowe\\ClassRegister\\src\\ClassRegister.Services\\ClassRegister.Services.csproj",
+      "projectUniqueName": "D:\\Studia\\Aplikacje Internetowe\\ClassRegister\\ClassRegister\\src\\ClassRegister.Services\\ClassRegister.Services.csproj",
       "projectName": "ClassRegister.Services",
-      "projectPath": "D:\\Studia\\Aplikacje Internetowe\\ClassRegister\\src\\ClassRegister.Services\\ClassRegister.Services.csproj",
+      "projectPath": "D:\\Studia\\Aplikacje Internetowe\\ClassRegister\\ClassRegister\\src\\ClassRegister.Services\\ClassRegister.Services.csproj",
       "packagesPath": "C:\\Users\\pwale\\.nuget\\packages\\",
-      "outputPath": "D:\\Studia\\Aplikacje Internetowe\\ClassRegister\\src\\ClassRegister.Services\\obj\\",
+      "outputPath": "D:\\Studia\\Aplikacje Internetowe\\ClassRegister\\ClassRegister\\src\\ClassRegister.Services\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -3659,11 +3659,11 @@
       "frameworks": {
         "netcoreapp2.1": {
           "projectReferences": {
-            "D:\\Studia\\Aplikacje Internetowe\\ClassRegister\\src\\ClassRegister.Core\\ClassRegister.Core.csproj": {
-              "projectPath": "D:\\Studia\\Aplikacje Internetowe\\ClassRegister\\src\\ClassRegister.Core\\ClassRegister.Core.csproj"
+            "D:\\Studia\\Aplikacje Internetowe\\ClassRegister\\ClassRegister\\src\\ClassRegister.Core\\ClassRegister.Core.csproj": {
+              "projectPath": "D:\\Studia\\Aplikacje Internetowe\\ClassRegister\\ClassRegister\\src\\ClassRegister.Core\\ClassRegister.Core.csproj"
             },
-            "D:\\Studia\\Aplikacje Internetowe\\ClassRegister\\src\\ClassRegister.Infrastructure\\ClassRegister.Infrastructure.csproj": {
-              "projectPath": "D:\\Studia\\Aplikacje Internetowe\\ClassRegister\\src\\ClassRegister.Infrastructure\\ClassRegister.Infrastructure.csproj"
+            "D:\\Studia\\Aplikacje Internetowe\\ClassRegister\\ClassRegister\\src\\ClassRegister.Infrastructure\\ClassRegister.Infrastructure.csproj": {
+              "projectPath": "D:\\Studia\\Aplikacje Internetowe\\ClassRegister\\ClassRegister\\src\\ClassRegister.Infrastructure\\ClassRegister.Infrastructure.csproj"
             }
           }
         }

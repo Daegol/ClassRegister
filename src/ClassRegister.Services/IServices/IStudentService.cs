@@ -10,5 +10,6 @@ namespace ClassRegister.Services.IServices
 
         Task DeleteStudent(string pesel);
         Task UpdateStudent(UpdateStudentDto studentDto);
+        Task<IEnumerable<StudentToGroupDto>> GetStudentsToGroup();
     }
 }

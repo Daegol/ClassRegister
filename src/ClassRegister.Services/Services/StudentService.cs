@@ -14,7 +14,6 @@ namespace ClassRegister.Services.Services
     {
         private readonly IStudentRepository _studentRepository;
         private readonly IMapper _mapper;
-        private readonly MyMapper _mymapper = new MyMapper();
 
         public StudentService(IStudentRepository studentRepository, IMapper mapper)
         {
@@ -44,8 +43,15 @@ namespace ClassRegister.Services.Services
         public async Task UpdateStudent(UpdateStudentDto studentDto)
         {
             var student = await _studentRepository.GetByPesel(studentDto.Pesel);
-            student = _mymapper.UpdateStudentMap(studentDto, student);
+            student = MyMapper.UpdateStudentMap(studentDto, student);
             await _studentRepository.UpdateStudent(student);
+        }
+
+        public async Task<IEnumerable<StudentToGroupDto>> GetStudentsToGroup()
+        {
+            var students = await _studentRepository.Get();
+            var studentsToGroup = _mapper.Map<IEnumerable<StudentToGroupDto>>(students);
+            return studentsToGroup;
         }
     }
 }

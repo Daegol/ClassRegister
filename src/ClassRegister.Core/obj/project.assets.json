@@ -694,11 +694,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Studia\\Aplikacje Internetowe\\ClassRegister\\src\\ClassRegister.Core\\ClassRegister.Core.csproj",
+      "projectUniqueName": "D:\\Studia\\Aplikacje Internetowe\\ClassRegister\\ClassRegister\\src\\ClassRegister.Core\\ClassRegister.Core.csproj",
       "projectName": "ClassRegister.Core",
-      "projectPath": "D:\\Studia\\Aplikacje Internetowe\\ClassRegister\\src\\ClassRegister.Core\\ClassRegister.Core.csproj",
+      "projectPath": "D:\\Studia\\Aplikacje Internetowe\\ClassRegister\\ClassRegister\\src\\ClassRegister.Core\\ClassRegister.Core.csproj",
       "packagesPath": "C:\\Users\\pwale\\.nuget\\packages\\",
-      "outputPath": "D:\\Studia\\Aplikacje Internetowe\\ClassRegister\\src\\ClassRegister.Core\\obj\\",
+      "outputPath": "D:\\Studia\\Aplikacje Internetowe\\ClassRegister\\ClassRegister\\src\\ClassRegister.Core\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

@@ -12,7 +12,6 @@ namespace ClassRegister.Services.Services
     {
         private readonly IParentRepository _parentRepository;
         private readonly IMapper _mapper;
-        private readonly MyMapper _mymapper = new MyMapper();
 
         public ParentService(IParentRepository parentRepository, IMapper mapper)
         {
@@ -42,7 +41,7 @@ namespace ClassRegister.Services.Services
         public async Task UpdateParent(UpdateParentDto parentDto)
         {
             var parent = await _parentRepository.GetByPesel(parentDto.Pesel);
-            parent = _mymapper.UpdateParentMap(parentDto, parent);
+            parent = MyMapper.UpdateParentMap(parentDto, parent);
             await _parentRepository.UpdateParent(parent);
         }
     }

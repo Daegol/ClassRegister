@@ -12,7 +12,6 @@ namespace ClassRegister.Services.Services
     {
         private readonly ITeacherRepository _teacherRepository;
         private readonly IMapper _mapper;
-        private readonly MyMapper _mymapper = new MyMapper();
 
         public TeacherService(ITeacherRepository TeacherRepository, IMapper mapper)
         {
@@ -42,8 +41,15 @@ namespace ClassRegister.Services.Services
         public async Task UpdateTeacher(UpdateTeacherDto teacherDto)
         {
             var teacher = await _teacherRepository.GetByPesel(teacherDto.Pesel);
-            teacher = _mymapper.UpdateTeacherMap(teacherDto, teacher);
+            teacher = MyMapper.UpdateTeacherMap(teacherDto, teacher);
             await _teacherRepository.UpdateTeacher(teacher);
+        }
+
+        public async Task<IEnumerable<TeacherToGroupDto>> GetTeachersToGroup()
+        {
+            var teachers = await _teacherRepository.Get();
+            var teacherDtos = _mapper.Map<IEnumerable<TeacherToGroupDto>>(teachers);
+            return teacherDtos;
         }
     }
 }

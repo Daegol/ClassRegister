@@ -1,11 +1,13 @@
-﻿using ClassRegister.Core.Model;
+﻿using System;
+using System.Collections.Generic;
+using ClassRegister.Core.Model;
 using ClassRegister.Services.DTOs;
 
 namespace ClassRegister.Services.Mappers
 {
-    public class MyMapper
+    public static class MyMapper
     {
-        public Student UpdateStudentMap(UpdateStudentDto studentDto, Student student)
+        public static Student UpdateStudentMap(UpdateStudentDto studentDto, Student student)
         {
             student.FirstName = studentDto.FirstName;
             student.LastName = studentDto.LastName;
@@ -22,7 +24,7 @@ namespace ClassRegister.Services.Mappers
             return student;
         }
 
-        public Teacher UpdateTeacherMap(UpdateTeacherDto teacherDto, Teacher teacher)
+        public static Teacher UpdateTeacherMap(UpdateTeacherDto teacherDto, Teacher teacher)
         {
             teacher.FirstName = teacherDto.FirstName;
             teacher.LastName = teacherDto.LastName;
@@ -39,7 +41,7 @@ namespace ClassRegister.Services.Mappers
             return teacher;
         }
 
-        public Admin UpdateAdminMap(UpdateAdminDto adminDto, Admin admin)
+        public static Admin UpdateAdminMap(UpdateAdminDto adminDto, Admin admin)
         {
             admin.FirstName = adminDto.FirstName;
             admin.LastName = adminDto.LastName;
@@ -56,7 +58,7 @@ namespace ClassRegister.Services.Mappers
             return admin;
         }
 
-        public Parent UpdateParentMap(UpdateParentDto parentDto, Parent parent)
+        public static Parent UpdateParentMap(UpdateParentDto parentDto, Parent parent)
         {
             parent.FirstName = parentDto.FirstName;
             parent.LastName = parentDto.LastName;
@@ -71,6 +73,13 @@ namespace ClassRegister.Services.Mappers
             parentDto.Address = parentDto.Address.Remove(0, parentDto.Address.IndexOf(' ') + 1);
             parent.City = parentDto.Address.Substring(0, parentDto.Address.Length);
             return parent;
+        }
+
+        public static Class AddClassMap(ClassToAddDto classToAdd, Class cl)
+        {
+            cl.TeacherId = classToAdd.TutorId;
+            cl.Name = classToAdd.Name;
+            return cl;
         }
     }
 }
