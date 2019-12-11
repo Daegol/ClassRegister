@@ -37,5 +37,12 @@ namespace ClassRegister.Application.Controllers
             await _teacherService.UpdateTeacher(teacherDto);
             return Ok();
         }
+
+        [HttpGet("tig")]
+        public async Task<ActionResult<IEnumerable<TeacherToGroupDto>>> GetTeachersToGroup()
+        {
+            var teachersToGroup = await _teacherService.GetTeachersToGroup();
+            return Json(teachersToGroup);
+        }
     }
 }

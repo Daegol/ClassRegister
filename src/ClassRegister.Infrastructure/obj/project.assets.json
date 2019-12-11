@@ -3489,11 +3489,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Studia\\Aplikacje Internetowe\\ClassRegister\\src\\ClassRegister.Infrastructure\\ClassRegister.Infrastructure.csproj",
+      "projectUniqueName": "D:\\Studia\\Aplikacje Internetowe\\ClassRegister\\ClassRegister\\src\\ClassRegister.Infrastructure\\ClassRegister.Infrastructure.csproj",
       "projectName": "ClassRegister.Infrastructure",
-      "projectPath": "D:\\Studia\\Aplikacje Internetowe\\ClassRegister\\src\\ClassRegister.Infrastructure\\ClassRegister.Infrastructure.csproj",
+      "projectPath": "D:\\Studia\\Aplikacje Internetowe\\ClassRegister\\ClassRegister\\src\\ClassRegister.Infrastructure\\ClassRegister.Infrastructure.csproj",
       "packagesPath": "C:\\Users\\pwale\\.nuget\\packages\\",
-      "outputPath": "D:\\Studia\\Aplikacje Internetowe\\ClassRegister\\src\\ClassRegister.Infrastructure\\obj\\",
+      "outputPath": "D:\\Studia\\Aplikacje Internetowe\\ClassRegister\\ClassRegister\\src\\ClassRegister.Infrastructure\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -3512,8 +3512,8 @@
       "frameworks": {
         "netcoreapp2.1": {
           "projectReferences": {
-            "D:\\Studia\\Aplikacje Internetowe\\ClassRegister\\src\\ClassRegister.Core\\ClassRegister.Core.csproj": {
-              "projectPath": "D:\\Studia\\Aplikacje Internetowe\\ClassRegister\\src\\ClassRegister.Core\\ClassRegister.Core.csproj"
+            "D:\\Studia\\Aplikacje Internetowe\\ClassRegister\\ClassRegister\\src\\ClassRegister.Core\\ClassRegister.Core.csproj": {
+              "projectPath": "D:\\Studia\\Aplikacje Internetowe\\ClassRegister\\ClassRegister\\src\\ClassRegister.Core\\ClassRegister.Core.csproj"
             }
           }
         }

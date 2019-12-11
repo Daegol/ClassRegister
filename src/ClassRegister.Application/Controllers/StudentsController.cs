@@ -37,5 +37,12 @@ namespace ClassRegister.Application.Controllers
             await _studentService.UpdateStudent(studentDto);
             return Ok();
         }
+
+        [HttpGet("stg")]
+        public async Task<ActionResult<IEnumerable<StudentToGroupDto>>> GetStudentsToGroup()
+        {
+            var students = await _studentService.GetStudentsToGroup();
+            return Json(students);
+        }
     }
 }

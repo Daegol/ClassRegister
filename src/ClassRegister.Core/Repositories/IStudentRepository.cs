@@ -12,6 +12,7 @@ namespace ClassRegister.Core.Repositories
         Task<Student> GetByEmail(string email);
         Task<Student> GetByPesel(string pesel);
         Task AddStudent(Student student);
+        Task AddClasses(IEnumerable<Guid> studentsId, Guid classId);
         Task DeleteStudent(string pesel);
         Task UpdateStudent(Student student);
     }

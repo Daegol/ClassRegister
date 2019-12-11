@@ -8,6 +8,7 @@ namespace ClassRegister.Core.Model
     public class Class
     {
         public Guid Id { get; set; }
+        public string Name { get; set; }
 
         private ISet<Student> _students = new HashSet<Student>();
         public IEnumerable<Student> Students => _students;
@@ -15,5 +16,10 @@ namespace ClassRegister.Core.Model
         private ISet<Lesson> _lessons = new HashSet<Lesson>();
         public IEnumerable<Lesson> Lessons => _lessons;
         public Guid TeacherId { get; set; }
+
+        public Class()
+        {
+            Id = Guid.NewGuid();
+        }
     }
 }
