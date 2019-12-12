@@ -9,6 +9,9 @@ namespace ClassRegister.Core.Model
 {
     public abstract class User
     {
+        protected User()
+        {
+        }
         protected User(Guid id, string role, string firstName, byte[] passwordHash, byte[] passwordSalt,
             string lastName, string email, string phoneNumber, string pesel, string postCode, string city,
             string street, string houseNumber)

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Security.Principal;
 
 namespace ClassRegister.Services.DTOs
 {
@@ -9,5 +10,6 @@ namespace ClassRegister.Services.DTOs
         public string FirstName { get; set; }
         public string LastName { get; set; }
         public string Pesel { get; set; }
+        public string StudentClass { get; set; }
     }
 }

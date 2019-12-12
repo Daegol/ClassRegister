@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using ClassRegister.Core.Model;
+using ClassRegister.Core.Repositories;
 using ClassRegister.Services.DTOs;
 
 namespace ClassRegister.Services.Mappers
@@ -60,12 +62,6 @@ namespace ClassRegister.Services.Mappers
 
         public static Parent UpdateParentMap(UpdateParentDto parentDto, Parent parent)
         {
-            parent.FirstName = parentDto.FirstName;
-            parent.LastName = parentDto.LastName;
-            parent.Email = parentDto.Email;
-            parent.Pesel = parentDto.Pesel;
-            parent.PhoneNumber = parentDto.PhoneNumber;
-            parent.Street = parentDto.Address.Substring(0, parentDto.Address.IndexOf(' '));
             parentDto.Address = parentDto.Address.Remove(0, parentDto.Address.IndexOf(' ') + 1);
             parent.HouseNumber = parentDto.Address.Substring(0, parentDto.Address.IndexOf(' '));
             parentDto.Address = parentDto.Address.Remove(0, parentDto.Address.IndexOf(' ') + 1);
@@ -80,6 +76,31 @@ namespace ClassRegister.Services.Mappers
             cl.TeacherId = classToAdd.TutorId;
             cl.Name = classToAdd.Name;
             return cl;
+        }
+
+        public static StudentToGroupDto StudentToGroup(Student student, IClassRepository classRepository)
+        {
+            var studentToGroupDto = new StudentToGroupDto();
+            studentToGroupDto.FirstName = student.FirstName;
+            studentToGroupDto.LastName = student.LastName;
+            studentToGroupDto.Pesel = student.Pesel;
+            studentToGroupDto.IsAssigned = false;
+            studentToGroupDto.StudentClass = 
+                student.ClassId != null ? classRepository.GetById(student.ClassId).Result.Name : "Brak przydziału";
+            studentToGroupDto.Id = student.Id;
+            return studentToGroupDto;
+        }
+
+        public static ClassesDto ClassesToSend(Class cl, ITeacherRepository teacherRepository)
+        {
+            var classesDto = new ClassesDto();
+            classesDto.Name = cl.Name;
+            classesDto.DatabaseId = cl.Id;
+            classesDto.StudentsNumber = cl.Students.Count();
+            var tutor = teacherRepository.GetById(cl.TeacherId).Result;
+            classesDto.Tutor = tutor.FirstName + ' ' + tutor.LastName;
+            classesDto.TutorPesel = tutor.Pesel;
+            return classesDto;
         }
     }
 }
