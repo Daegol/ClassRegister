@@ -11,5 +11,6 @@ namespace ClassRegister.Core.Repositories
         Task AddClass(Class group);
         Task<Class> GetById(Guid? id);
         Task DeleteClass(Guid id);
+        Task UpdateClass(Class grup);
     }
 }

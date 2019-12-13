@@ -10,5 +10,6 @@ namespace ClassRegister.Services.IServices
         Task AddClass(ClassToAddDto group);
         Task<IEnumerable<ClassesDto>> GetClasses();
         Task DeleteClass(Guid id);
+        Task UpdateClass(UpdateClassDto updateClass);
     }
 }

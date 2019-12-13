@@ -45,5 +45,13 @@ namespace ClassRegister.Services.Services
         {
             await _classRepository.DeleteClass(id);
         }
+
+        public async Task UpdateClass(UpdateClassDto updateClass)
+        {
+            var cl = await _classRepository.GetById(updateClass.ClassId);
+            cl = MyMapper.UpdateClassMap(updateClass, cl, _teacherRepository);
+            await _studentRepository.AddClasses(updateClass.StudentsId, updateClass.ClassId);
+            await _classRepository.UpdateClass(cl);
+        }
     }
 }

@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Threading.Tasks;
 using ClassRegister.Services.DTOs;
 using ClassRegister.Services.IServices;
@@ -42,6 +43,13 @@ namespace ClassRegister.Application.Controllers
         public async Task<ActionResult<IEnumerable<StudentToGroupDto>>> GetStudentsToGroup()
         {
             var students = await _studentService.GetStudentsToGroup();
+            return Json(students);
+        }
+
+        [HttpGet("stg/{id}")]
+        public async Task<ActionResult<IEnumerable<StudentToGroupDto>>> GetStudentsToGroup(Guid id)
+        {
+            var students = await _studentService.GetStudentsToGroupEdit(id);
             return Json(students);
         }
     }

@@ -37,5 +37,12 @@ namespace ClassRegister.Application.Controllers
             await _classService.DeleteClass(id);
             return Ok();
         }
+
+        [HttpPut("update")]
+        public async Task<IActionResult> UpdateClass([FromBody] UpdateClassDto updateClass)
+        {
+            await _classService.UpdateClass(updateClass);
+            return Ok();
+        }
     }
 }

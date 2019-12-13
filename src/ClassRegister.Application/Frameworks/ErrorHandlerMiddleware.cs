@@ -34,7 +34,6 @@ namespace ClassRegister.Application.Frameworks
             var statusCode = HttpStatusCode.InternalServerError;
             var exceptionType = exception.GetType();
 
-            // dodac reszte wyjatkow do http kiedys !!!
             switch (exception)
             {
                 case Exception e when exceptionType == typeof(UnauthorizedAccessException):

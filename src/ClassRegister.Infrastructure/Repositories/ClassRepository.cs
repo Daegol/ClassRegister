@@ -38,5 +38,12 @@ namespace ClassRegister.Infrastructure.Repositories
             await _context.SaveChangesAsync();
             await Task.CompletedTask;
         }
+
+        public async Task UpdateClass(Class grup)
+        {
+            _context.Classes.Update(grup);
+            await _context.SaveChangesAsync();
+            await Task.CompletedTask;
+        }
     }
 }

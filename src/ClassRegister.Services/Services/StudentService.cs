@@ -57,5 +57,12 @@ namespace ClassRegister.Services.Services
             var studentsToGroup = students.Select(x => MyMapper.StudentToGroup(x, _classRepository)).ToList();
             return studentsToGroup;
         }
+
+        public async Task<IEnumerable<StudentToGroupDto>> GetStudentsToGroupEdit(Guid classId)
+        {
+            var students = await _studentRepository.Get();
+            var studentsToGroup = students.Select(x => MyMapper.StudentToGroupEdit(x, _classRepository,classId)).ToList();
+            return studentsToGroup;
+        }
     }
 }
