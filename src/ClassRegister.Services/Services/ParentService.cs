@@ -30,7 +30,7 @@ namespace ClassRegister.Services.Services
                 id++;
             }
 
-            return parentDtos;
+            return parentDtos; // parentDto.Select(MyMapper.MapParentToPatentDto).ToList();
         }
 
         public async Task DeleteParent(string pesel)

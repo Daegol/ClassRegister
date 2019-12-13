@@ -10,6 +10,7 @@ namespace ClassRegister.Core.Model
 
         private ISet<Lesson> _lessons = new HashSet<Lesson>();
         public IEnumerable<Lesson> Lessons => _lessons;
+
         public Guid TeacherId { get; set; }
     }
 }

@@ -90,15 +90,13 @@ namespace ClassRegister.Application.Migrations
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd();
 
-                    b.Property<Guid>("ClassId");
+                    b.Property<Guid?>("ClassId");
 
-                    b.Property<string>("Room");
+                    b.Property<Guid?>("ScheduleId");
 
-                    b.Property<Guid>("ScheduleId");
+                    b.Property<Guid?>("SubjectId");
 
-                    b.Property<Guid>("SubjectId");
-
-                    b.Property<Guid>("TeacherId");
+                    b.Property<Guid?>("TeacherId");
 
                     b.HasKey("Id");
 
@@ -269,23 +267,19 @@ namespace ClassRegister.Application.Migrations
                 {
                     b.HasOne("ClassRegister.Core.Model.Class", "Class")
                         .WithMany("Lessons")
-                        .HasForeignKey("ClassId")
-                        .OnDelete(DeleteBehavior.Cascade);
+                        .HasForeignKey("ClassId");
 
                     b.HasOne("ClassRegister.Core.Model.Schedule", "Schedule")
                         .WithMany("Lessons")
-                        .HasForeignKey("ScheduleId")
-                        .OnDelete(DeleteBehavior.Cascade);
+                        .HasForeignKey("ScheduleId");
 
                     b.HasOne("ClassRegister.Core.Model.Subject", "Subject")
                         .WithMany("Lessons")
-                        .HasForeignKey("SubjectId")
-                        .OnDelete(DeleteBehavior.Cascade);
+                        .HasForeignKey("SubjectId");
 
                     b.HasOne("ClassRegister.Core.Model.Teacher", "Teacher")
                         .WithMany("Lessons")
-                        .HasForeignKey("TeacherId")
-                        .OnDelete(DeleteBehavior.Cascade);
+                        .HasForeignKey("TeacherId");
                 });
 
             modelBuilder.Entity("ClassRegister.Core.Model.Parent", b =>

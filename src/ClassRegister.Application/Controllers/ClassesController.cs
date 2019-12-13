@@ -1,4 +1,5 @@
-﻿using System.Threading.Tasks;
+﻿using System;
+using System.Threading.Tasks;
 using ClassRegister.Services.DTOs;
 using ClassRegister.Services.IServices;
 using Microsoft.AspNetCore.Authorization;
@@ -16,10 +17,31 @@ namespace ClassRegister.Application.Controllers
             _classService = classService;
         }
 
+        [HttpGet]
+        public async Task<IActionResult> GetClasses()
+        {
+            var classesDto = await _classService.GetClasses();
+            return Json(classesDto);
+        }
+
         [HttpPost("add")]
         public async Task<IActionResult> AddClass([FromBody] ClassToAddDto classTo)
         {
             await _classService.AddClass(classTo);
+            return Ok();
+        }
+
+        [HttpDelete("{id}")]
+        public async Task<IActionResult> DeleteClass(Guid id)
+        {
+            await _classService.DeleteClass(id);
+            return Ok();
+        }
+
+        [HttpPut("update")]
+        public async Task<IActionResult> UpdateClass([FromBody] UpdateClassDto updateClass)
+        {
+            await _classService.UpdateClass(updateClass);
             return Ok();
         }
     }

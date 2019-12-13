@@ -1,6 +1,8 @@
 ﻿using System;
+using System.Threading.Tasks;
 using AutoMapper;
 using ClassRegister.Core.Model;
+using ClassRegister.Core.Repositories;
 using ClassRegister.Services.DTOs;
 
 namespace ClassRegister.Services.Mappers
@@ -32,16 +34,7 @@ namespace ClassRegister.Services.Mappers
                             p => p.Street + ' ' + p.HouseNumber + '\n' + p.PostCode + ' ' + p.City))
                     .ForMember(x => x.Id, o => o.Ignore());
                 cfg.CreateMap<Teacher, TeacherToGroupDto>();
-                cfg.CreateMap<Student, StudentToGroupDto>()
-                    .ForMember(x => x.IsAssigned,
-                        m => m.MapFrom(
-                            p => IsAssigned(p.ClassId) ));
             }).CreateMapper();
-        }
-
-        public static bool IsAssigned(Guid? classId)
-        {
-            return classId != null;
         }
     }
 }

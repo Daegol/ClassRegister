@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Threading.Tasks;
 using ClassRegister.Services.DTOs;
 
@@ -11,5 +12,6 @@ namespace ClassRegister.Services.IServices
         Task DeleteStudent(string pesel);
         Task UpdateStudent(UpdateStudentDto studentDto);
         Task<IEnumerable<StudentToGroupDto>> GetStudentsToGroup();
+        Task<IEnumerable<StudentToGroupDto>> GetStudentsToGroupEdit(Guid classId);
     }
 }

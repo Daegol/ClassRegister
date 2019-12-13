@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 using AutoMapper;
 using ClassRegister.Core.Model;
@@ -13,12 +15,15 @@ namespace ClassRegister.Services.Services
     {
         private readonly IClassRepository _classRepository;
         private readonly IStudentRepository _studentRepository;
+        private readonly ITeacherRepository _teacherRepository;
         private readonly IMapper _mapper;
 
-        public ClassService(IClassRepository classRepository, IMapper mapper, IStudentRepository studentRepository)
+        public ClassService(IClassRepository classRepository, ITeacherRepository teacherRepository,
+            IMapper mapper, IStudentRepository studentRepository)
         {
             _classRepository = classRepository;
             _studentRepository = studentRepository;
+            _teacherRepository = teacherRepository;
             _mapper = mapper;
         }
 
@@ -28,6 +33,25 @@ namespace ClassRegister.Services.Services
             var cl = MyMapper.AddClassMap(group, newClass);
             await _classRepository.AddClass(cl);
             await _studentRepository.AddClasses(group.StudentsId, cl.Id);
+        }
+
+        public async Task<IEnumerable<ClassesDto>> GetClasses()
+        {
+            var classes = await _classRepository.GetAll();
+            return classes.Select(x => MyMapper.ClassesToSend(x, _teacherRepository));
+        }
+
+        public async Task DeleteClass(Guid id)
+        {
+            await _classRepository.DeleteClass(id);
+        }
+
+        public async Task UpdateClass(UpdateClassDto updateClass)
+        {
+            var cl = await _classRepository.GetById(updateClass.ClassId);
+            cl = MyMapper.UpdateClassMap(updateClass, cl, _teacherRepository);
+            await _studentRepository.AddClasses(updateClass.StudentsId, updateClass.ClassId);
+            await _classRepository.UpdateClass(cl);
         }
     }
 }
