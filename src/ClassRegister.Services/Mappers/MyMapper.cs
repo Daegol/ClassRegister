@@ -186,10 +186,15 @@ namespace ClassRegister.Services.Mappers
             }
             planDto.IsExisting = true;
             planDto.Monday = cl.Lessons.Where(x => x.DayOfTheWeek == "Monday").Select(x => LessonMap(x));
+            planDto.Monday = planDto.Monday.OrderBy(x => x.LessonHour);
             planDto.Tuesday = cl.Lessons.Where(x => x.DayOfTheWeek == "Tuesday").Select(x => LessonMap(x));
+            planDto.Tuesday = planDto.Tuesday.OrderBy(x => x.LessonHour);
             planDto.Wednesday = cl.Lessons.Where(x => x.DayOfTheWeek == "Wednesday").Select(x => LessonMap(x));
+            planDto.Wednesday = planDto.Wednesday.OrderBy(x => x.LessonHour);
             planDto.Thursday = cl.Lessons.Where(x => x.DayOfTheWeek == "Thursday").Select(x => LessonMap(x));
+            planDto.Thursday = planDto.Thursday.OrderBy(x => x.LessonHour);
             planDto.Friday = cl.Lessons.Where(x => x.DayOfTheWeek == "Friday").Select(x => LessonMap(x));
+            planDto.Friday = planDto.Friday.OrderBy(x => x.LessonHour);
             return planDto;
         }
 
