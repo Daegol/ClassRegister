@@ -34,3 +34,20 @@ D:\Studia\Aplikacje Internetowe\ClassRegister\ClassRegister\src\ClassRegister.Se
 D:\Studia\Aplikacje Internetowe\ClassRegister\ClassRegister\src\ClassRegister.Services\obj\Debug\netcoreapp2.1\ClassRegister.Services.csproj.CopyComplete
 D:\Studia\Aplikacje Internetowe\ClassRegister\ClassRegister\src\ClassRegister.Services\obj\Debug\netcoreapp2.1\ClassRegister.Services.dll
 D:\Studia\Aplikacje Internetowe\ClassRegister\ClassRegister\src\ClassRegister.Services\obj\Debug\netcoreapp2.1\ClassRegister.Services.pdb
+C:\Users\Deogol\Desktop\ClassRegister\src\ClassRegister.Services\bin\Debug\netcoreapp2.1\ClassRegister.Services.deps.json
+C:\Users\Deogol\Desktop\ClassRegister\src\ClassRegister.Services\bin\Debug\netcoreapp2.1\ClassRegister.Services.dll
+C:\Users\Deogol\Desktop\ClassRegister\src\ClassRegister.Services\bin\Debug\netcoreapp2.1\ClassRegister.Services.pdb
+C:\Users\Deogol\Desktop\ClassRegister\src\ClassRegister.Services\bin\Debug\netcoreapp2.1\ClassRegister.Core.dll
+C:\Users\Deogol\Desktop\ClassRegister\src\ClassRegister.Services\bin\Debug\netcoreapp2.1\ClassRegister.Infrastructure.dll
+C:\Users\Deogol\Desktop\ClassRegister\src\ClassRegister.Services\bin\Debug\netcoreapp2.1\Microsoft.IdentityModel.Tokens.dll
+C:\Users\Deogol\Desktop\ClassRegister\src\ClassRegister.Services\bin\Debug\netcoreapp2.1\System.IdentityModel.Tokens.Jwt.dll
+C:\Users\Deogol\Desktop\ClassRegister\src\ClassRegister.Services\bin\Debug\netcoreapp2.1\ClassRegister.Core.pdb
+C:\Users\Deogol\Desktop\ClassRegister\src\ClassRegister.Services\bin\Debug\netcoreapp2.1\ClassRegister.Infrastructure.pdb
+C:\Users\Deogol\Desktop\ClassRegister\src\ClassRegister.Services\bin\Debug\netcoreapp2.1\Microsoft.IdentityModel.Tokens.xml
+C:\Users\Deogol\Desktop\ClassRegister\src\ClassRegister.Services\bin\Debug\netcoreapp2.1\System.IdentityModel.Tokens.Jwt.xml
+C:\Users\Deogol\Desktop\ClassRegister\src\ClassRegister.Services\obj\Debug\netcoreapp2.1\ClassRegister.Services.csprojAssemblyReference.cache
+C:\Users\Deogol\Desktop\ClassRegister\src\ClassRegister.Services\obj\Debug\netcoreapp2.1\ClassRegister.Services.AssemblyInfoInputs.cache
+C:\Users\Deogol\Desktop\ClassRegister\src\ClassRegister.Services\obj\Debug\netcoreapp2.1\ClassRegister.Services.AssemblyInfo.cs
+C:\Users\Deogol\Desktop\ClassRegister\src\ClassRegister.Services\obj\Debug\netcoreapp2.1\ClassRegister.Services.csproj.CopyComplete
+C:\Users\Deogol\Desktop\ClassRegister\src\ClassRegister.Services\obj\Debug\netcoreapp2.1\ClassRegister.Services.dll
+C:\Users\Deogol\Desktop\ClassRegister\src\ClassRegister.Services\obj\Debug\netcoreapp2.1\ClassRegister.Services.pdb

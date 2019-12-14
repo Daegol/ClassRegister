@@ -44,5 +44,19 @@ namespace ClassRegister.Application.Controllers
             await _classService.UpdateClass(updateClass);
             return Ok();
         }
+
+        [HttpGet("plan/{id}")]
+        public async Task<IActionResult> GetPlan(Guid id)
+        {
+            var plan = await _classService.GetPlan(id);
+            return Json(plan);
+        }
+
+        [HttpPost("plan/add")]
+        public async Task<IActionResult> AddPlan([FromBody] PlanToAddDto planToAdd)
+        {
+            await _classService.AddPlan(planToAdd);
+            return Ok();
+        }
     }
 }

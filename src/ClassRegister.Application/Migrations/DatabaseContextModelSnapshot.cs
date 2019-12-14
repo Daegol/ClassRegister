@@ -92,6 +92,10 @@ namespace ClassRegister.Application.Migrations
 
                     b.Property<Guid?>("ClassId");
 
+                    b.Property<string>("DayOfTheWeek");
+
+                    b.Property<int>("LessonHour");
+
                     b.Property<Guid?>("ScheduleId");
 
                     b.Property<Guid?>("SubjectId");

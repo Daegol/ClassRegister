@@ -45,5 +45,11 @@ namespace ClassRegister.Infrastructure.Repositories
             await _context.SaveChangesAsync();
             await Task.CompletedTask;
         }
+
+        public async Task<Class> GetWithLessonsById(Guid? id) =>
+            await Task.FromResult(_context.Classes
+                .Include(x => x.Lessons).ThenInclude(x => x.Subject)
+                .Include(x => x.Lessons).ThenInclude(x => x.Teacher)
+                .SingleOrDefault(x => x.Id == id));
     }
 }

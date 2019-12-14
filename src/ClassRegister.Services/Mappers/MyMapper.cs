@@ -165,5 +165,45 @@ namespace ClassRegister.Services.Mappers
             subject.TeacherId = teacherRepository.GetByPesel(updateSubject.TeacherPesel).Result.Id;
             return subject;
         }
+
+        public static LessonDto LessonMap(Lesson lesson)
+        {
+            var lessonDto = new LessonDto();
+            lessonDto.LessonHour = lesson.LessonHour;
+            lessonDto.SubjectName = lesson.Subject.Name;
+            lessonDto.TeacherName = lesson.Teacher.FirstName + " " + lesson.Teacher.LastName;
+            lessonDto.DatabaseId = lesson.Id;
+            return lessonDto;
+        }
+
+        public static PlanDto PlanMap(Class cl)
+        {
+            var planDto = new PlanDto();
+            if(cl.Lessons.Count() == 0)
+            {
+                planDto.IsExisting = false;
+                return planDto;
+            }
+            planDto.IsExisting = true;
+            planDto.Monday = cl.Lessons.Where(x => x.DayOfTheWeek == "Monday").Select(x => LessonMap(x));
+            planDto.Tuesday = cl.Lessons.Where(x => x.DayOfTheWeek == "Tuesday").Select(x => LessonMap(x));
+            planDto.Wednesday = cl.Lessons.Where(x => x.DayOfTheWeek == "Wednesday").Select(x => LessonMap(x));
+            planDto.Thursday = cl.Lessons.Where(x => x.DayOfTheWeek == "Thursday").Select(x => LessonMap(x));
+            planDto.Friday = cl.Lessons.Where(x => x.DayOfTheWeek == "Friday").Select(x => LessonMap(x));
+            return planDto;
+        }
+
+        public static async Task LessonToAddMap(LessonToAddDto lessonToAdd, string day, 
+            ISubjectRepository subjectRepository, Guid classId, ILessonRepository lessonRepository)
+        {
+            var lesson = new Lesson();
+            lesson.DayOfTheWeek = day;
+            lesson.LessonHour = lessonToAdd.LessonHour;
+            lesson.SubjectId = Guid.Parse(lessonToAdd.SubjectId);
+            lesson.ClassId = classId;
+            lesson.TeacherId = subjectRepository.GetById(lesson.SubjectId.Value).Result.TeacherId;
+            lesson.Id = Guid.NewGuid();
+            await lessonRepository.AddLesson(lesson);
+        }
     }
 }

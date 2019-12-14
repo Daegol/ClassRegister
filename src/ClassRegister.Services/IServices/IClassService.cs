@@ -11,5 +11,7 @@ namespace ClassRegister.Services.IServices
         Task<IEnumerable<ClassesDto>> GetClasses();
         Task DeleteClass(Guid id);
         Task UpdateClass(UpdateClassDto updateClass);
+        Task<PlanDto> GetPlan(Guid id);
+        Task AddPlan(PlanToAddDto planToAdd);
     }
 }

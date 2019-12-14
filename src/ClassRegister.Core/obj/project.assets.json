@@ -688,23 +688,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\pwale\\.nuget\\packages\\": {},
+    "C:\\Users\\Deogol\\.nuget\\packages\\": {},
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Studia\\Aplikacje Internetowe\\ClassRegister\\ClassRegister\\src\\ClassRegister.Core\\ClassRegister.Core.csproj",
+      "projectUniqueName": "C:\\Users\\Deogol\\Desktop\\ClassRegister\\src\\ClassRegister.Core\\ClassRegister.Core.csproj",
       "projectName": "ClassRegister.Core",
-      "projectPath": "D:\\Studia\\Aplikacje Internetowe\\ClassRegister\\ClassRegister\\src\\ClassRegister.Core\\ClassRegister.Core.csproj",
-      "packagesPath": "C:\\Users\\pwale\\.nuget\\packages\\",
-      "outputPath": "D:\\Studia\\Aplikacje Internetowe\\ClassRegister\\ClassRegister\\src\\ClassRegister.Core\\obj\\",
+      "projectPath": "C:\\Users\\Deogol\\Desktop\\ClassRegister\\src\\ClassRegister.Core\\ClassRegister.Core.csproj",
+      "packagesPath": "C:\\Users\\Deogol\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Deogol\\Desktop\\ClassRegister\\src\\ClassRegister.Core\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\pwale\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Deogol\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -736,10 +736,16 @@
           }
         },
         "imports": [
-          "net461"
+          "net461",
+          "net462",
+          "net47",
+          "net471",
+          "net472",
+          "net48"
         ],
         "assetTargetFallback": true,
-        "warn": true
+        "warn": true,
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.0.100\\RuntimeIdentifierGraph.json"
       }
     }
   }

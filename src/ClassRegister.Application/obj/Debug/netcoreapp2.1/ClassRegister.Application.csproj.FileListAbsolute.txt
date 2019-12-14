@@ -40,3 +40,26 @@ D:\Studia\Aplikacje Internetowe\ClassRegister\ClassRegister\src\ClassRegister.Ap
 D:\Studia\Aplikacje Internetowe\ClassRegister\ClassRegister\src\ClassRegister.Application\obj\Debug\netcoreapp2.1\ClassRegister.Application.csproj.CopyComplete
 D:\Studia\Aplikacje Internetowe\ClassRegister\ClassRegister\src\ClassRegister.Application\obj\Debug\netcoreapp2.1\ClassRegister.Application.dll
 D:\Studia\Aplikacje Internetowe\ClassRegister\ClassRegister\src\ClassRegister.Application\obj\Debug\netcoreapp2.1\ClassRegister.Application.pdb
+C:\Users\Deogol\Desktop\ClassRegister\src\ClassRegister.Application\bin\Debug\netcoreapp2.1\appsettings.Development.json
+C:\Users\Deogol\Desktop\ClassRegister\src\ClassRegister.Application\bin\Debug\netcoreapp2.1\appsettings.json
+C:\Users\Deogol\Desktop\ClassRegister\src\ClassRegister.Application\bin\Debug\netcoreapp2.1\Properties\launchSettings.json
+C:\Users\Deogol\Desktop\ClassRegister\src\ClassRegister.Application\bin\Debug\netcoreapp2.1\ClassRegister.Application.deps.json
+C:\Users\Deogol\Desktop\ClassRegister\src\ClassRegister.Application\bin\Debug\netcoreapp2.1\ClassRegister.Application.runtimeconfig.json
+C:\Users\Deogol\Desktop\ClassRegister\src\ClassRegister.Application\bin\Debug\netcoreapp2.1\ClassRegister.Application.runtimeconfig.dev.json
+C:\Users\Deogol\Desktop\ClassRegister\src\ClassRegister.Application\bin\Debug\netcoreapp2.1\ClassRegister.Application.dll
+C:\Users\Deogol\Desktop\ClassRegister\src\ClassRegister.Application\bin\Debug\netcoreapp2.1\ClassRegister.Application.pdb
+C:\Users\Deogol\Desktop\ClassRegister\src\ClassRegister.Application\bin\Debug\netcoreapp2.1\ClassRegister.Core.dll
+C:\Users\Deogol\Desktop\ClassRegister\src\ClassRegister.Application\bin\Debug\netcoreapp2.1\ClassRegister.Infrastructure.dll
+C:\Users\Deogol\Desktop\ClassRegister\src\ClassRegister.Application\bin\Debug\netcoreapp2.1\ClassRegister.Services.dll
+C:\Users\Deogol\Desktop\ClassRegister\src\ClassRegister.Application\bin\Debug\netcoreapp2.1\ClassRegister.Services.pdb
+C:\Users\Deogol\Desktop\ClassRegister\src\ClassRegister.Application\bin\Debug\netcoreapp2.1\ClassRegister.Core.pdb
+C:\Users\Deogol\Desktop\ClassRegister\src\ClassRegister.Application\bin\Debug\netcoreapp2.1\ClassRegister.Infrastructure.pdb
+C:\Users\Deogol\Desktop\ClassRegister\src\ClassRegister.Application\obj\Debug\netcoreapp2.1\ClassRegister.Application.csprojAssemblyReference.cache
+C:\Users\Deogol\Desktop\ClassRegister\src\ClassRegister.Application\obj\Debug\netcoreapp2.1\ClassRegister.Application.RazorAssemblyInfo.cache
+C:\Users\Deogol\Desktop\ClassRegister\src\ClassRegister.Application\obj\Debug\netcoreapp2.1\ClassRegister.Application.RazorAssemblyInfo.cs
+C:\Users\Deogol\Desktop\ClassRegister\src\ClassRegister.Application\obj\Debug\netcoreapp2.1\ClassRegister.Application.AssemblyInfoInputs.cache
+C:\Users\Deogol\Desktop\ClassRegister\src\ClassRegister.Application\obj\Debug\netcoreapp2.1\ClassRegister.Application.AssemblyInfo.cs
+C:\Users\Deogol\Desktop\ClassRegister\src\ClassRegister.Application\obj\Debug\netcoreapp2.1\ClassRegister.Application.RazorTargetAssemblyInfo.cache
+C:\Users\Deogol\Desktop\ClassRegister\src\ClassRegister.Application\obj\Debug\netcoreapp2.1\ClassRegister.Application.csproj.CopyComplete
+C:\Users\Deogol\Desktop\ClassRegister\src\ClassRegister.Application\obj\Debug\netcoreapp2.1\ClassRegister.Application.dll
+C:\Users\Deogol\Desktop\ClassRegister\src\ClassRegister.Application\obj\Debug\netcoreapp2.1\ClassRegister.Application.pdb

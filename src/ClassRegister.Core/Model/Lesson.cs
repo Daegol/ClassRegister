@@ -7,6 +7,8 @@ namespace ClassRegister.Core.Model
 {
     public class Lesson
     {
+        public string DayOfTheWeek { get; set; }
+        public int LessonHour { get; set; }
         public Guid Id { get; set; }
         public virtual Class Class { get; set; }
         public Guid? ClassId { get; set; }

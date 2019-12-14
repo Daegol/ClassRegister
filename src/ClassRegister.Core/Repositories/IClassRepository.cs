@@ -10,6 +10,7 @@ namespace ClassRegister.Core.Repositories
         Task<IEnumerable<Class>> GetAll();
         Task AddClass(Class group);
         Task<Class> GetById(Guid? id);
+        Task<Class> GetWithLessonsById(Guid? id);
         Task DeleteClass(Guid id);
         Task UpdateClass(Class grup);
     }

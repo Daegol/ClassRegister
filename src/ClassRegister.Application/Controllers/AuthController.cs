@@ -36,6 +36,7 @@ namespace ClassRegister.Application.Controllers
         [HttpPost("register")]
         public async Task<IActionResult> Register([FromBody] UserForRegisterDto userFroRegisterDto)
         {
+
             await _authService.Register(userFroRegisterDto.Role, userFroRegisterDto.FirstName,
                 userFroRegisterDto.LastName, userFroRegisterDto.Email, userFroRegisterDto.PhoneNumber,
                 userFroRegisterDto.Pesel, userFroRegisterDto.PostCode, userFroRegisterDto.City,
