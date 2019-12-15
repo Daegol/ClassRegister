@@ -155,7 +155,8 @@ namespace ClassRegister.Services.Mappers
             var teacher = await teacherRepository.GetById(subject.TeacherId);
             subjectDto.TeacherName = teacher.FirstName + ' ' + teacher.LastName;
             subjectDto.TeacherPesel = teacher.Pesel;
-            subjectDto.GroupsAssignedToSubject = subject.Lessons.Select(GroupsAssignedToSubject);
+            var groups = subject.Lessons.Select(GroupsAssignedToSubject);
+            subjectDto.GroupsAssignedToSubject = groups.ToHashSet();
             return subjectDto;
         }
 
@@ -209,6 +210,73 @@ namespace ClassRegister.Services.Mappers
             lesson.TeacherId = subjectRepository.GetById(lesson.SubjectId.Value).Result.TeacherId;
             lesson.Id = Guid.NewGuid();
             await lessonRepository.AddLesson(lesson);
+        }
+
+        public static GradesDto GradesMap(Grade grade)
+        {
+            var grades = new GradesDto();
+            grades.Id = grade.Id;
+            grades.Type = grade.Type;
+            grades.Value = grade.Value;
+            return grades;
+        }
+
+        public static StudentsToGrade StudentsToGradeMap(Student student)
+        {
+            var studentToGrade = new StudentsToGrade();
+            studentToGrade.FirstName = student.FirstName;
+            studentToGrade.LastName = student.LastName;
+            studentToGrade.Pesel = student.Pesel;
+            studentToGrade.Grades = student.Grades.Select(GradesMap);
+            return studentToGrade;
+        }
+
+        public static Grade GradeToAddMap(GradeToAdd gradeToAdd, IStudentRepository studentRepository)
+        {
+            var grade = new Grade();
+            grade.Id = Guid.NewGuid();
+            grade.Type = gradeToAdd.Type;
+            grade.Value = gradeToAdd.Value;
+            grade.StudentId = studentRepository.GetByPesel(gradeToAdd.StudentPesel).Result.Id;
+            grade.SubjectId = gradeToAdd.SubjectId;
+            return grade;
+        }
+
+        public static Grade GradeToUpdateMap(GradeToUpdate gradeToUpdate, Grade grade)
+        {
+            grade.Type = gradeToUpdate.Type;
+            grade.Value = gradeToUpdate.Value;
+            return grade;
+        }
+
+        public static StudentDto StudentMap(Student student)
+        {
+            var studentDto = new StudentDto();
+            studentDto.Address = student.Street + " " + student.HouseNumber + "\n" + student.PostCode + " " +
+                                 student.City;
+            studentDto.Email = student.Email;
+            studentDto.FirstName = student.FirstName;
+            studentDto.LastName = student.LastName;
+            if (student.Parent != null) studentDto.ParentPesel = student.Parent.Pesel;
+            else studentDto.ParentPesel = "Nie przypisano rodzica";
+            studentDto.PhoneNumber = student.PhoneNumber;
+            studentDto.Pesel = student.Pesel;
+            return studentDto;
+        }
+
+        public static ParentDto ParentMap(Parent parent)
+        {
+            var parentDto = new ParentDto();
+            parentDto.Address = parent.Street + " " + parent.HouseNumber + "\n" + parent.PostCode + " " +
+                                 parent.City;
+            parentDto.Email = parent.Email;
+            parentDto.FirstName = parent.FirstName;
+            parentDto.LastName = parent.LastName;
+            if (parent.Student != null) parentDto.ParentPesel = parent.Student.Pesel;
+            else parentDto.ParentPesel = "Nie przypisano dziecka";
+            parentDto.PhoneNumber = parent.PhoneNumber;
+            parentDto.Pesel = parent.Pesel;
+            return parentDto;
         }
     }
 }

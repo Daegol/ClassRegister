@@ -30,7 +30,8 @@ namespace ClassRegister.Infrastructure.Repositories
         {
             var subjects = _context.Subjects
                 .Include(x => x.Lessons)
-                .ThenInclude(x => x.Class).ToList();
+                .ThenInclude(x => x.Class)
+                .ThenInclude(x => x.Students).ToList();
             return subjects;
         }
 

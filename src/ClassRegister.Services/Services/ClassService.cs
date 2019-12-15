@@ -87,5 +87,10 @@ namespace ClassRegister.Services.Services
                 await MyMapper.LessonToAddMap(lesson, "Friday", _subjectRepository, planToAdd.ClassId, _lessonRepository);
             }
         }
+
+        public async Task DeletePlan(Guid id)
+        {
+            await _lessonRepository.RemovePlan(id);
+        }
     }
 }

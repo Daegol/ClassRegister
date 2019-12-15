@@ -8,6 +8,7 @@
         public string PhoneNumber { get; set; }
         public string Pesel { get; set; }
         public string Address { get; set; }
+        public string ParentPesel { get; set; }
 
     }
 }

@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using ClassRegister.Core.Model;
 using ClassRegister.Core.Repositories;
 using ClassRegister.Infrastructure.Database;
+using Microsoft.EntityFrameworkCore;
 
 namespace ClassRegister.Infrastructure.Repositories
 {
@@ -18,7 +19,7 @@ namespace ClassRegister.Infrastructure.Repositories
         }
 
         public async Task<IEnumerable<Parent>> Get() =>
-            await Task.FromResult(_context.Parents.ToList());
+            await Task.FromResult(_context.Parents.Include(x => x.Student).ToList());
 
         public async Task<Parent> GetById(Guid id) =>
             await Task.FromResult(_context.Parents.SingleOrDefault(x => x.Id == id));

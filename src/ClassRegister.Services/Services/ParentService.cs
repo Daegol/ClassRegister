@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 using AutoMapper;
 using ClassRegister.Core.Repositories;
@@ -22,7 +23,7 @@ namespace ClassRegister.Services.Services
         public async Task<IEnumerable<ParentDto>> GetParents()
         {
             var parents = await _parentRepository.Get();
-            var parentDtos = _mapper.Map<IEnumerable<ParentDto>>(parents);
+            var parentDtos = parents.Select(MyMapper.ParentMap).ToList();
             int id = 1;
             foreach (var parent in parentDtos)
             {
@@ -30,7 +31,7 @@ namespace ClassRegister.Services.Services
                 id++;
             }
 
-            return parentDtos; // parentDto.Select(MyMapper.MapParentToPatentDto).ToList();
+            return parentDtos;
         }
 
         public async Task DeleteParent(string pesel)

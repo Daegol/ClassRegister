@@ -22,13 +22,16 @@ namespace ClassRegister.Infrastructure.Repositories
             await Task.CompletedTask;
         }
 
-//        public async Task AssignClass(Guid classId, Guid subjectId)
-//        {
-//            var lesson = _context.Lessons.SingleOrDefault(x => x.SubjectId == subjectId);
-//            lesson.ClassId = classId;
-//            _context.Lessons.Update(lesson);
-//            await _context.SaveChangesAsync();
-//            await Task.CompletedTask;
-//        }
+        public async Task RemovePlan(Guid classId)
+        {
+            var lessons = _context.Lessons.Where(x => x.ClassId == classId).ToList();
+            foreach (var lesson in lessons)
+            {
+                _context.Lessons.Remove(lesson);
+            }
+
+            await _context.SaveChangesAsync();
+            await Task.CompletedTask;
+        }
     }
 }

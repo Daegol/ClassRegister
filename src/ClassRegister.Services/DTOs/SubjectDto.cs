@@ -8,7 +8,7 @@ namespace ClassRegister.Services.DTOs
         public string Name { get; set; }
         public string TeacherName { get; set; }
         public string TeacherPesel { get; set; }
-        public IEnumerable<ClassToSubjectDto> GroupsAssignedToSubject { get; set; }
+        public HashSet<ClassToSubjectDto> GroupsAssignedToSubject { get; set; }
         public Guid DatabaseId { get; set; }
     }
 }

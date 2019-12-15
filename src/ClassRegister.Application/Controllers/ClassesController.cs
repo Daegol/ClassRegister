@@ -58,5 +58,12 @@ namespace ClassRegister.Application.Controllers
             await _classService.AddPlan(planToAdd);
             return Ok();
         }
+
+        [HttpDelete("plan/delete/{id}")]
+        public async Task<IActionResult> DeletePlan(Guid id)
+        {
+            await _classService.DeletePlan(id);
+            return Ok();
+        }
     }
 }

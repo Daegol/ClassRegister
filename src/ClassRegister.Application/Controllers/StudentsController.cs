@@ -52,5 +52,12 @@ namespace ClassRegister.Application.Controllers
             var students = await _studentService.GetStudentsToGroupEdit(id);
             return Json(students);
         }
+
+        [HttpGet("grade/{id}")]
+        public async Task<ActionResult<IEnumerable<StudentsToGrade>>> GetStudentsToGrades(Guid id)
+        {
+            var students = await _studentService.GetStudentsToGrade(id);
+            return Json(students);
+        }
     }
 }

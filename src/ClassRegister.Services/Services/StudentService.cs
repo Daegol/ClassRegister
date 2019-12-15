@@ -16,24 +16,24 @@ namespace ClassRegister.Services.Services
     {
         private readonly IStudentRepository _studentRepository;
         private readonly IClassRepository _classRepository;
+        private readonly IParentRepository _parentRepository;
         private readonly IMapper _mapper;
 
-        public StudentService(IStudentRepository studentRepository, IMapper mapper, IClassRepository classRepository)
+        public StudentService(IStudentRepository studentRepository, IClassRepository classRepository, IParentRepository parentRepository, IMapper mapper)
         {
             _studentRepository = studentRepository;
             _classRepository = classRepository;
+            _parentRepository = parentRepository;
             _mapper = mapper;
         }
 
         public async Task<IEnumerable<StudentDto>> GetStudents()
         { 
             var students = await _studentRepository.Get();
-            var studentDtos =  _mapper.Map<IEnumerable<StudentDto>>(students);
-            int id = 1;
-            foreach (var student in studentDtos)
+            var studentDtos = students.Select(x => MyMapper.StudentMap(x)).ToList();
+            for(int i=0; i< studentDtos.Count(); i++)
             {
-                student.Id = id;
-                id++;
+                studentDtos.ElementAt(i).Id = i +1;
             }
 
             return studentDtos;
@@ -63,6 +63,13 @@ namespace ClassRegister.Services.Services
             var students = await _studentRepository.Get();
             var studentsToGroup = students.Select(x => MyMapper.StudentToGroupEdit(x, _classRepository,classId)).ToList();
             return studentsToGroup;
+        }
+
+        public async Task<IEnumerable<StudentsToGrade>> GetStudentsToGrade(Guid classId)
+        {
+            var students = await _studentRepository.Get();
+            var studentsToGrade = students.Where(x => x.ClassId == classId).Select(MyMapper.StudentsToGradeMap);
+            return studentsToGrade;
         }
     }
 }

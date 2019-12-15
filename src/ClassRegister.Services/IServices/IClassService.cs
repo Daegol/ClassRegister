@@ -13,5 +13,6 @@ namespace ClassRegister.Services.IServices
         Task UpdateClass(UpdateClassDto updateClass);
         Task<PlanDto> GetPlan(Guid id);
         Task AddPlan(PlanToAddDto planToAdd);
+        Task DeletePlan(Guid id);
     }
 }

@@ -61,6 +61,7 @@ namespace ClassRegister.Application
             services.AddScoped<IClassRepository, ClassRepository>();
             services.AddScoped<ILessonRepository, LessonRepository>();
             services.AddScoped<ISubjectRepository, SubjectRepository>();
+            services.AddScoped<IGradeRepository, GradeRepository>();
             services.AddSingleton<IJwtHandler, JwtHandler>();
 
             services.AddSingleton(AutoMapperConfig.Initialize());
@@ -72,6 +73,7 @@ namespace ClassRegister.Application
             services.AddScoped<IAdminService, AdminService>();
             services.AddScoped<IClassService, ClassService>();
             services.AddScoped<ISubjectService, SubjectService>();
+            services.AddScoped<IGradeService, GradeService>();
         }
 
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)
