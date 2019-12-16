@@ -18,17 +18,25 @@ namespace ClassRegister.Infrastructure.Repositories
             _context = context;
         }
 
-        public async Task<IEnumerable<Student>> Get() =>
-            await Task.FromResult(_context.Students.Include(x => x.Grades).Include(x => x.Parent).ToList());
+        public async Task<IEnumerable<Student>> Get()
+        {
+            return await Task.FromResult(_context.Students.Include(x => x.Grades).Include(x => x.Parent).ToList());
+        }
 
-        public async Task<Student> GetById(Guid id) =>
-            await Task.FromResult(_context.Students.SingleOrDefault(x => x.Id == id));
+        public async Task<Student> GetById(Guid id)
+        {
+            return await Task.FromResult(_context.Students.SingleOrDefault(x => x.Id == id));
+        }
 
-        public async Task<Student> GetByEmail(string email) =>
-            await Task.FromResult(_context.Students.SingleOrDefault(x => x.Email == email));
+        public async Task<Student> GetByEmail(string email)
+        {
+            return await Task.FromResult(_context.Students.SingleOrDefault(x => x.Email == email));
+        }
 
-        public async Task<Student> GetByPesel(string pesel) =>
-            await Task.FromResult(_context.Students.SingleOrDefault(x => x.Pesel == pesel));
+        public async Task<Student> GetByPesel(string pesel)
+        {
+            return await Task.FromResult(_context.Students.Include(x => x.Parent).SingleOrDefault(x => x.Pesel == pesel));
+        }
 
         public async Task AddStudent(Student student)
         {

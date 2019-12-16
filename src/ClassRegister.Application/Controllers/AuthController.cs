@@ -40,7 +40,7 @@ namespace ClassRegister.Application.Controllers
             await _authService.Register(userFroRegisterDto.Role, userFroRegisterDto.FirstName,
                 userFroRegisterDto.LastName, userFroRegisterDto.Email, userFroRegisterDto.PhoneNumber,
                 userFroRegisterDto.Pesel, userFroRegisterDto.PostCode, userFroRegisterDto.City,
-                userFroRegisterDto.Street, userFroRegisterDto.HouseNumber, userFroRegisterDto.Password);
+                userFroRegisterDto.Street, userFroRegisterDto.HouseNumber, userFroRegisterDto.Password, userFroRegisterDto.StudentId);
 
             return StatusCode(201);
         }

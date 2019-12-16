@@ -14,5 +14,7 @@ namespace ClassRegister.Core.Repositories
         Task AddParent(Parent parent);
         Task DeleteParent(string pesel);
         Task UpdateParent(Parent parent);
+        Task AssignStudent(Guid studentId, Guid parentId);
+        Task<Parent> GetByIdWithGrades(Guid id);
     }
 }

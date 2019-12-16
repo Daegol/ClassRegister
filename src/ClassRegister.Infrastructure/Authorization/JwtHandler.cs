@@ -21,7 +21,9 @@ namespace ClassRegister.Infrastructure.Authorization
             {
                 new Claim(ClaimTypes.NameIdentifier, user.Id.ToString()),
                 new Claim(ClaimTypes.Name, user.Email),
-                new Claim(ClaimTypes.Role, user.Role)
+                new Claim(ClaimTypes.Role, user.Role),
+                new Claim("FirstName",user.FirstName),
+                new Claim("LastName",user.LastName)
             };
 
             var key = new SymmetricSecurityKey(Encoding.UTF8

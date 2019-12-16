@@ -53,10 +53,17 @@ namespace ClassRegister.Application.Controllers
             return Json(students);
         }
 
-        [HttpGet("grade/{id}")]
-        public async Task<ActionResult<IEnumerable<StudentsToGrade>>> GetStudentsToGrades(Guid id)
+        [HttpGet("grade/{classId}/{subjectId}")]
+        public async Task<ActionResult<IEnumerable<StudentsToGrade>>> GetStudentsToGrades(Guid classId, Guid subjectId)
         {
-            var students = await _studentService.GetStudentsToGrade(id);
+            var students = await _studentService.GetStudentsToGrade(classId, subjectId);
+            return Json(students);
+        }
+
+        [HttpGet("parent")]
+        public async Task<ActionResult<IEnumerable<StudentToParentDto>>> GetStudentsToParent()
+        {
+            var students = await _studentService.GetStudentsToParent();
             return Json(students);
         }
     }

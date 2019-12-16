@@ -1,4 +1,6 @@
-﻿namespace ClassRegister.Services.DTOs
+﻿using System;
+
+namespace ClassRegister.Services.DTOs
 {
     public class UserForRegisterDto
     {
@@ -13,5 +15,6 @@
         public string Street { get; set; }
         public string HouseNumber { get; set; }
         public string Password { get; set; }
+        public string StudentId { get; set; }
     }
 }

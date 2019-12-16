@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using AutoMapper;
@@ -12,11 +13,13 @@ namespace ClassRegister.Services.Services
     public class ParentService : IParentService
     {
         private readonly IParentRepository _parentRepository;
+        private readonly IClassRepository _classRepository;
         private readonly IMapper _mapper;
 
-        public ParentService(IParentRepository parentRepository, IMapper mapper)
+        public ParentService(IParentRepository parentRepository, IClassRepository classRepository, IMapper mapper)
         {
             _parentRepository = parentRepository;
+            _classRepository = classRepository;
             _mapper = mapper;
         }
 
@@ -44,6 +47,13 @@ namespace ClassRegister.Services.Services
             var parent = await _parentRepository.GetByPesel(parentDto.Pesel);
             parent = MyMapper.UpdateParentMap(parentDto, parent);
             await _parentRepository.UpdateParent(parent);
+        }
+
+        public async Task<PlanDto> GetPlan(Guid id)
+        {
+            var parent = await _parentRepository.GetById(id);
+            var cl = await _classRepository.GetWithLessonsById(parent.Student.ClassId);
+            return MyMapper.PlanMap(cl);
         }
     }
 }

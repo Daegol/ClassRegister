@@ -9,10 +9,12 @@ namespace ClassRegister.Application.Controllers
     public class GradesController : ApiBaseController
     {
         private readonly IGradeService _gradeService;
+        private readonly IMailService _mailService;
 
-        public GradesController(IGradeService gradeService)
+        public GradesController(IGradeService gradeService, IMailService mailService)
         {
             _gradeService = gradeService;
+            _mailService = mailService;
         }
 
         [HttpPost("add")]
@@ -34,6 +36,13 @@ namespace ClassRegister.Application.Controllers
         {
             await _gradeService.DeleteGrade(id);
             return Ok();
+        }
+
+        [HttpGet("student/{id}")]
+        public async Task<IActionResult> GetGrades(Guid id)
+        {
+            var grades = await _gradeService.GetStudentGrades(id);
+            return Json(grades);
         }
     }
 }

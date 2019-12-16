@@ -57,7 +57,7 @@ namespace ClassRegister.Services.Services
 
         public async Task Register(string role, string firstName, string lastName, string email, string phoneNumber,
             string pesel,
-            string postCode, string city, string street, string houseNumber, string password)
+            string postCode, string city, string street, string houseNumber, string password, string studentId)
         {
             if (await IfExistTask(email, pesel)) throw new Exception("User already exist");
 
@@ -77,6 +77,7 @@ namespace ClassRegister.Services.Services
                         hmac.ComputeHash(Encoding.UTF8.GetBytes(password)), hmac.Key, lastName, email,
                         phoneNumber, pesel, postCode, city, street, houseNumber);
                     await _parentRepository.AddParent(parentToCreate);
+                    if (studentId != "empty") await _parentRepository.AssignStudent(Guid.Parse(studentId), parentToCreate.Id);
                     break;
                 case "Teacher":
                     var teacherToCreate = new Teacher(Guid.NewGuid(), role, firstName,

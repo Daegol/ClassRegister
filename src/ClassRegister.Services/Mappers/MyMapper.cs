@@ -74,6 +74,7 @@ namespace ClassRegister.Services.Mappers
             parent.PostCode = parentDto.Address.Substring(0, parentDto.Address.IndexOf(' '));
             parentDto.Address = parentDto.Address.Remove(0, parentDto.Address.IndexOf(' ') + 1);
             parent.City = parentDto.Address.Substring(0, parentDto.Address.Length);
+            if (parentDto.Id != "empty") parent.StudentId = Guid.Parse(parentDto.Id);
             return parent;
         }
 
@@ -221,13 +222,13 @@ namespace ClassRegister.Services.Mappers
             return grades;
         }
 
-        public static StudentsToGrade StudentsToGradeMap(Student student)
+        public static StudentsToGrade StudentsToGradeMap(Student student, Guid subjectId)
         {
             var studentToGrade = new StudentsToGrade();
             studentToGrade.FirstName = student.FirstName;
             studentToGrade.LastName = student.LastName;
             studentToGrade.Pesel = student.Pesel;
-            studentToGrade.Grades = student.Grades.Select(GradesMap);
+            studentToGrade.Grades = student.Grades.Where(x => x.SubjectId == subjectId).Select(GradesMap);
             return studentToGrade;
         }
 
@@ -277,6 +278,16 @@ namespace ClassRegister.Services.Mappers
             parentDto.PhoneNumber = parent.PhoneNumber;
             parentDto.Pesel = parent.Pesel;
             return parentDto;
+        }
+
+        public static StudentToParentDto StudentToParentMap(Student student)
+        {
+            var studentTo = new StudentToParentDto();
+            studentTo.Id = student.Id;
+            studentTo.FirstName = student.FirstName;
+            studentTo.LastName = student.LastName;
+            studentTo.Pesel = student.Pesel;
+            return studentTo;
         }
     }
 }

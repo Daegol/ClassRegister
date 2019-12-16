@@ -65,11 +65,19 @@ namespace ClassRegister.Services.Services
             return studentsToGroup;
         }
 
-        public async Task<IEnumerable<StudentsToGrade>> GetStudentsToGrade(Guid classId)
+        public async Task<IEnumerable<StudentsToGrade>> GetStudentsToGrade(Guid classId, Guid subjectId)
         {
             var students = await _studentRepository.Get();
-            var studentsToGrade = students.Where(x => x.ClassId == classId).Select(MyMapper.StudentsToGradeMap);
+            var studentsToGrade = students.Where(x => x.ClassId == classId)
+                .Select(x => MyMapper.StudentsToGradeMap(x, subjectId));
             return studentsToGrade;
+        }
+
+        public async Task<IEnumerable<StudentToParentDto>> GetStudentsToParent()
+        {
+            var students = await _studentRepository.Get();
+            var studentsTo = students.Select(MyMapper.StudentToParentMap);
+            return studentsTo;
         }
     }
 }

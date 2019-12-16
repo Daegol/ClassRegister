@@ -10,6 +10,6 @@ namespace ClassRegister.Services.IServices
 
         Task Register(string role, string firstName,
             string lastName, string email, string phoneNumber, string pesel, string postCode, string city,
-            string street, string houseNumber, string password);
+            string street, string houseNumber, string password, string studentId);
     }
 }

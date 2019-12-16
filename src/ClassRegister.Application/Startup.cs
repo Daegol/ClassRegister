@@ -74,6 +74,7 @@ namespace ClassRegister.Application
             services.AddScoped<IClassService, ClassService>();
             services.AddScoped<ISubjectService, SubjectService>();
             services.AddScoped<IGradeService, GradeService>();
+            services.AddScoped<IMailService, MailService>();
         }
 
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)

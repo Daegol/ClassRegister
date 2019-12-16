@@ -11,5 +11,6 @@ namespace ClassRegister.Services.IServices
         Task AddGrade(GradeToAdd grade);
         Task DeleteGrade(Guid id);
         Task UpdateGrade(GradeToUpdate updateGrade);
+        Task<IEnumerable<StudentGradesDto>> GetStudentGrades(Guid id);
     }
 }

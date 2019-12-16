@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Threading.Tasks;
 using ClassRegister.Services.DTOs;
 using ClassRegister.Services.IServices;
@@ -36,6 +37,13 @@ namespace ClassRegister.Application.Controllers
         {
             await _parentService.UpdateParent(parentDto);
             return Ok();
+        }
+
+        [HttpGet("plan/{id}")]
+        public async Task<IActionResult> GetPlan(Guid id)
+        {
+            var plan = await _parentService.GetPlan(id);
+            return Json(plan);
         }
     }
 }
